@@ -19,8 +19,8 @@ class ReportMasterComposer
             $logo = $instituteSettings['logo'] ??  '';
         }
 
-        $view->with('maintainer', 'ShanixLab');
-        $view->with('maintainer_url', 'http://shanixlab.com');
+        $view->with('maintainer', 'ASRG Technology');
+        $view->with('maintainer_url', 'http://asrgtechnology.com');
         $view->with('majorVersion', '2');
         $view->with('minorVersion', '0');
         $view->with('instituteName', $instituteName);

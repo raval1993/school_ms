@@ -58,8 +58,8 @@ class AppHelper
         2 => 'Female'
     ];
     const RELIGION = [
-        1 => 'Islam',
-        2 => 'Hindu',
+        1 => 'Hindu',
+        2 => 'Muslims',
         3 => 'Cristian',
         4 => 'Buddhist',
         5 => 'Other',

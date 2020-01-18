@@ -103,7 +103,7 @@ class StudentController extends Controller
         $gender = 1;
         $religion = 1;
         $bloodGroup = 1;
-        $nationality = 'Bangladeshi';
+        $nationality = 'Indian';
         $group = 'None';
         $shift = 'Day';
         $regiInfo = null;
@@ -166,8 +166,8 @@ class StudentController extends Controller
             'photo.dimensions' => 'The :attribute dimensions min 150 X 150.',
         ];
         $rules = [
-            'name' => 'required|min:5|max:255',
-            'photo' => 'mimes:jpeg,jpg,png|max:200|dimensions:min_width=150,min_height=150',
+            'name' => 'required|min:1|max:255',
+            'photo' => 'mimes:jpeg,jpg,png|max:20000|dimensions:min_width=15,min_height=1500',
             'dob' => 'min:10|max:10',
             'gender' => 'required|integer',
             'religion' => 'nullable|integer',
@@ -208,11 +208,11 @@ class StudentController extends Controller
 
         if(strlen($request->get('username',''))){
             $rules['email' ] = 'email|max:255|unique:students,email|unique:users,email';
-            $createUser = true;
+           // $createUser = true;
 
         }
 
-        $this->validate($request, $rules);
+        //$this->validate($request, $rules);
 
 
         if(AppHelper::getInstituteCategory() != 'college') {

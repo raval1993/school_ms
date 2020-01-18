@@ -28,7 +28,7 @@ class BackendMasterComposer
 
 
         $view->with('maintainer', 'ShanixLab');
-        $view->with('maintainer_url', 'http://shanixlab.com');
+        $view->with('maintainer_url', 'http://asrgtechnology.com');
         $view->with('majorVersion', '2');
         $view->with('minorVersion', '0');
         $view->with('appSettings', $appSettings);
