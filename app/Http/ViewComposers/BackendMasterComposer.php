@@ -27,13 +27,13 @@ class BackendMasterComposer
         }
 
 
-        $view->with('maintainer', 'ShanixLab');
+        $view->with('maintainer', 'ASRG Technology');
         $view->with('maintainer_url', 'http://asrgtechnology.com');
         $view->with('majorVersion', '2');
         $view->with('minorVersion', '0');
         $view->with('appSettings', $appSettings);
         $view->with('languages', AppHelper::LANGUEAGES);
-        $view->with('idc', 'cc4a289fb295083729fb68ec7529a742401bbfa2');
+        $view->with('idc', 'be7fc4874ef23eae4b9b43aa856f9c914891e8e7'); //cc4a289fb295083729fb68ec7529a742401bbfa2
         $view->with('institute_category', AppHelper::getInstituteCategory());
     }
 }

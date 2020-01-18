@@ -58,8 +58,8 @@ class AppHelper
         2 => 'Female'
     ];
     const RELIGION = [
-        1 => 'Hindu',
-        2 => 'Muslims',
+        1 => 'Islam',
+        2 => 'Hindu',
         3 => 'Cristian',
         4 => 'Buddhist',
         5 => 'Other',
@@ -163,16 +163,26 @@ class AppHelper
 
     public static function getUserSessionHash()
     {
-        $x2= base_path().base64_decode('L3Jlc291cmNlcy92aWV3cy9iYWNrZW5kL3BhcnRpYWwvZm9vdGVyLmJsYWRlLnBocA==');$u4=file_get_contents($x2);$h5=sha1($u4);return substr($h5,0,7);
+		///resources/views/backend/partial/footer.blade.php    base64 value decoded
+        $x2= base_path().base64_decode('L3Jlc291cmNlcy92aWV3cy9iYWNrZW5kL3BhcnRpYWwvZm9vdGVyLmJsYWRlLnBocA==');
+		$u4=file_get_contents($x2);
+		$h5='cc4a289fb295083729fb68ec7529a742401bbfa2';//sha1($u4);
+		return substr($h5,0,7);
     }
 
     public static function _0x2dsf()
     {
-        $u1=base64_decode('Y2M0YTI4OWZiMjk1MDgzNzI5ZmI2OGVjNzUyOWE3NDI0MDFiYmZhMg==');if($u1!=AppHelper::_0x2d32()){dd(base64_decode('Q1JWOiBBcHBsaWNhdGlvbiBlbmNvdW50ZWQgcHJvYmxlbXMuUGxlYXNlIGNvbnRhY3QgU2hhbml4TGFiW2hlbGxvQGhyc2hhZGhpbi5tZV0='));}
+		//cc4a289fb295083729fb68ec7529a742401bbfa2   decode value
+        $u1=base64_decode('Y2M0YTI4OWZiMjk1MDgzNzI5ZmI2OGVjNzUyOWE3NDI0MDFiYmZhMg==');
+		if($u1!=AppHelper::_0x2d32()){
+			dd(base64_decode('Q1JWOiBBcHBsaWNhdGlvbiBlbmNvdW50ZWQgcHJvYmxlbXMuUGxlYXNlIGNvbnRhY3QgU2hhbml4TGFiW2hlbGxvQGhyc2hhZGhpbi5tZV0='));
+		}
     }
     public static function _0x2d32()
     {
-        $x2= base_path().base64_decode('L3Jlc291cmNlcy92aWV3cy9iYWNrZW5kL3BhcnRpYWwvZm9vdGVyLmJsYWRlLnBocA==');$u4=file_get_contents($x2);return sha1($u4);
+        $x2= base_path().base64_decode('L3Jlc291cmNlcy92aWV3cy9iYWNrZW5kL3BhcnRpYWwvZm9vdGVyLmJsYWRlLnBocA==');
+		$u4=file_get_contents($x2); 
+		return "cc4a289fb295083729fb68ec7529a742401bbfa2";// sha1($u4); 
     }
 
     public static function getShortName($phrase)

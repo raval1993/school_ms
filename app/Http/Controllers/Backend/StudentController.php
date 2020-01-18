@@ -83,6 +83,34 @@ class StudentController extends Controller
             $iclass = $class_id;
 
         }
+		else{
+			  if(AppHelper::getInstituteCategory() != 'college') {
+                // now check is academic year set or not
+                $settings = AppHelper::getAppSettings();
+                if(!isset($settings['academic_year']) || (int)($settings['academic_year']) < 1){
+                    return redirect()->route('student.index')
+                        ->with("error",'Academic year not set yet! Please go to settings and set it.')
+                        ->withInput();
+                }
+                $acYear = $settings['academic_year'];
+            }
+
+
+            //get student
+            $students = Registration::with('student')
+                ->orderBy('student_id','asc')
+                ->get();
+
+            //if section is mention then full this class section list
+            if($section_id){
+                $sections = Section::where('status', AppHelper::ACTIVE)
+                    ->where('class_id', $class_id)
+                    ->pluck('name', 'id');
+
+            }
+
+            $iclass = $class_id;
+		}
 
         return view('backend.student.list', compact('students', 'classes', 'iclass', 'sections', 'section_id', 'academic_years', 'acYear'));
 
@@ -103,7 +131,7 @@ class StudentController extends Controller
         $gender = 1;
         $religion = 1;
         $bloodGroup = 1;
-        $nationality = 'Indian';
+        $nationality = 'Bangladeshi';
         $group = 'None';
         $shift = 'Day';
         $regiInfo = null;
@@ -166,8 +194,8 @@ class StudentController extends Controller
             'photo.dimensions' => 'The :attribute dimensions min 150 X 150.',
         ];
         $rules = [
-            'name' => 'required|min:1|max:255',
-            'photo' => 'mimes:jpeg,jpg,png|max:20000|dimensions:min_width=15,min_height=1500',
+            'name' => 'required|min:5|max:255',
+            'photo' => 'mimes:jpeg,jpg,png|max:200|dimensions:min_width=150,min_height=150',
             'dob' => 'min:10|max:10',
             'gender' => 'required|integer',
             'religion' => 'nullable|integer',
@@ -208,11 +236,11 @@ class StudentController extends Controller
 
         if(strlen($request->get('username',''))){
             $rules['email' ] = 'email|max:255|unique:students,email|unique:users,email';
-           // $createUser = true;
+            $createUser = true;
 
         }
 
-        //$this->validate($request, $rules);
+        $this->validate($request, $rules);
 
 
         if(AppHelper::getInstituteCategory() != 'college') {
