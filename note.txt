@@ -1,0 +1,27 @@
+1.Logo :-school-management-system\storage\app\public\logo
+2.web logo:- C:\xampp\htdocs\school-management-system\storage\app\public\site
+3.C:\xampp\htdocs\school-management-system\app\Http\ViewComposers:-frontermastercomposer.php
+4.C:\xampp\htdocs\school-management-system\app\Http\ViewComposers--reportmaster
+
+5.C:\xampp\htdocs\school-management-system\app\Http\ViewComposers--backendmaster-------issue in change 
+
+6.C:\xampp\htdocs\school-management-system\app\Http\Controllers\Frontend-homecontroller
+
+
+
+7.C:\xampp\htdocs\school-management-system\bootstrap\cache---NO CHANGES SERVICE PROVIDER
+
+8.C:\xampp\htdocs\school-management-system\database\seeds--demositedatasender
+
+9.C:\xampp\htdocs\school-management-system\database\seeds--demoappdatasender
+
+10.C:\xampp\htdocs\school-management-system\resources\lang\en-site  --use first page
+
+11.C:\xampp\htdocs\school-management-system\resources\views\backend---manue(i card )
+
+12.C:\xampp\htdocs\school-management-system\resources\views\frontend:-web page layout
+
+13.  C:\xampp\htdocs\school-management-system\resources\views\backend\report\hrm\employee\idcard\--
+format_three.blade.php
+
+14, C:\xampp\htdocs\school-management-system\public\example\template1.html --- id card example template
