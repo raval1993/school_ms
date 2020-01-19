@@ -1,8 +1,10 @@
 <footer class="main-footer">
-    <div class="pull-right">
+  
+     School Management System
+	
+	  <div class="pull-right">
         <!-- Don't remove below text. It's violate the license. -->
-        <strong>SMGMT SYS v{{$majorVersion}}.{{$minorVersion}} - {{substr($idc,0,7)}}</strong> || Developed by <a class="cplink" href="{{$maintainer_url}}">{{$maintainer}}</a>
+		<strong><a class="cplink" href="{{$maintainer_url}}">ASRGTECHNOLOGY.COM</a></strong>
+       
     </div>
-    <strong>Copyright &copy; {{date('Y')}} <a href="#">@if(isset($appSettings['institute_settings']['name'])){{$appSettings['institute_settings']['name']}}@else ASRG SCHOOL @endif</a>.</strong> All rights
-    reserved.
 </footer>

@@ -175,7 +175,7 @@ class AppHelper
 		//cc4a289fb295083729fb68ec7529a742401bbfa2   decode value
         $u1=base64_decode('Y2M0YTI4OWZiMjk1MDgzNzI5ZmI2OGVjNzUyOWE3NDI0MDFiYmZhMg==');
 		if($u1!=AppHelper::_0x2d32()){
-			dd(base64_decode('Q1JWOiBBcHBsaWNhdGlvbiBlbmNvdW50ZWQgcHJvYmxlbXMuUGxlYXNlIGNvbnRhY3QgU2hhbml4TGFiW2hlbGxvQGhyc2hhZGhpbi5tZV0='));
+			dd(base64_decode('RXJyb3IgOiBQbGVhc2UgY29udGFjdCB0byBzYWxlc0Bhc3JndGVjaG5vbG9neS5jb20='));
 		}
     }
     public static function _0x2d32()

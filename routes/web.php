@@ -475,7 +475,7 @@ Route::get(
     $gateway = \App\AppMeta::where('id', AppHelper::getAppSettings('student_attendance_gateway'))->first();
     $gateway = json_decode($gateway->meta_value);
     $smsHelper = new \App\Http\Helpers\SmsHelper($gateway);
-    $res = $smsHelper->sendSms('8801722813644','test sms vai');
+    $res = $smsHelper->sendSms('9599378374','test sms vai');
     dd($res);
 }
 );

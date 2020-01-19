@@ -364,9 +364,10 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request, $id)
-    {
+    {       
         // if print id card of this student then
         // Do here
+		
         if($request->query->get('print_idcard',0)) {
 
             $templateId = AppHelper::getAppSettings('student_idcard_template');
@@ -420,8 +421,9 @@ class StudentController extends Controller
 
 
             $totalStudent = count($students);
-
+//echo "<pre>"; print_R($students); die;
             $side = 'both';
+			
             return view('backend.report.student.idcard.'.$format, compact(
                 'templateConfig',
                 'instituteInfo',
