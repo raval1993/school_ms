@@ -196,6 +196,8 @@ class EmployeeController extends Controller
 
         // if print id card of this student then
         // Do here
+
+
         if($request->query->get('print_idcard',0)) {
 
             $templateId = AppHelper::getAppSettings('employee_idcard_template');

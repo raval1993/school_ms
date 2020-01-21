@@ -272,9 +272,7 @@
                         <div class="title hrmghs" @if($templateConfig->fs_title_color) style="color:{{$templateConfig->fs_title_color}};"@endif>{{strtoupper($instituteInfo['name'])}}</div>
                     </div>
                     <div class="content">
-                    <span class="student_pic">
-                        <img class="border_red" @if($templateConfig->picture_border_color) style="border-color:{{$templateConfig->picture_border_color}};"@endif src="@if($employee->photo){{ asset('storage/employee')}}/{{ $employee->photo }} @else {{ asset('images/avatar.jpg')}} @endif" />
-                    </span>
+                    
                         <table border="0" cellpadding="0" cellspaing="0">
                             <tr>
                                 <td style="font-size: 10px;" class="bold">Name</td>
@@ -308,10 +306,7 @@
                             <img src="data:image/png;base64,{{$templateConfig->signature}}" />
                             <span>Authorized Signature</span>
                         </div>
-                        <div class="barcode">
-                            <img src="{{AppHelper::getIdcardBarCode($employee->id_card)}}" />
-                            <span clas="txt_full">{{$employee->id_card}}</span>
-                        </div>
+                        
                     </div>
 
                 </div>
@@ -337,7 +332,7 @@
 <script type="text/javascript">
     window.onload = function () {
         window.print();
-        window.close();
+        //window.close();
     };
 </script>
 </body>
