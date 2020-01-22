@@ -103,7 +103,24 @@ class StudentAttendanceController extends Controller
                 ->where('class_id', $class_id)
                 ->pluck('name', 'id');
         }
-
+		else{
+			  $att_date = Carbon::createFromFormat('d/m/Y',$attendance_date)->toDateString();
+			$attendances = Registration::where('status', AppHelper::ACTIVE)
+							->with(['student' => function ($query) {
+								$query->select('name','id');
+                 }])->with(['attendanceSingleDay' => function ($query) use($att_date, $class_id, $acYear) {
+                     $query->select('id','present','registration_id','in_time','out_time','staying_hour')
+                         ->whereDate('attendance_date', $att_date);
+                 }])
+                 ->whereHas('attendance' , function ($query) use($att_date, $class_id, $acYear) {
+                     $query->select('id','registration_id')
+                         ->whereDate('attendance_date', $att_date);
+                 })
+                 ->select('id','regi_no','roll_no','student_id')
+                 ->orderBy('roll_no','asc')
+                 ->get();
+		}
+		
 
 
         return view('backend.attendance.student.list', compact(
@@ -205,16 +222,10 @@ class StudentAttendanceController extends Controller
             $sendNotification = AppHelper::getAppSettings('student_attendance_notification');
        }
 
-        $classes = IClass::where('status', AppHelper::ACTIVE)
-            ->orderBy('order','asc')
-            ->pluck('name', 'id');
-			
-        $sendNotification = AppHelper::getAppSettings('student_attendance_notification');
+		   
+		    $sendNotification = AppHelper::getAppSettings('student_attendance_notification');
 
-        //if its college then have to get those academic years
-        if(AppHelper::getInstituteCategory() == 'college') {
-            $academic_years = AcademicYear::where('status', '1')->orderBy('id', 'desc')->pluck('title', 'id');
-        }
+     
 		
 		/*$students = Registration::with(['info' => function($query){
                 $query->select('name','id');
@@ -222,6 +233,19 @@ class StudentAttendanceController extends Controller
                 ->orderBy('roll_no','asc')
                 ->get();*/
 		$sections = Section::where('status', AppHelper::ACTIVE);
+	   
+	   
+
+        $classes = IClass::where('status', AppHelper::ACTIVE)
+            ->orderBy('order','asc')
+            ->pluck('name', 'id');
+			
+		   //if its college then have to get those academic years
+        if(AppHelper::getInstituteCategory() == 'college') {
+            $academic_years = AcademicYear::where('status', '1')->orderBy('id', 'desc')->pluck('title', 'id');
+        }	
+			
+       
  
         return view('backend.attendance.student.add', compact(
             'academic_years',
