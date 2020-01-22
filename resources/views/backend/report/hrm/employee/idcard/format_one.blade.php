@@ -263,7 +263,7 @@
                             <img src="data:image/png;base64,{{$templateConfig->signature}}" />
                             <span>Authorized Signature</span>
                         </div>
-
+ 
                     </div>
                 </div>
             @endforeach

@@ -386,7 +386,7 @@
 <script type="text/javascript">
     window.onload = function () {
         window.print();
-        window.close();
+       // window.close();
     };
 </script>
 </body>

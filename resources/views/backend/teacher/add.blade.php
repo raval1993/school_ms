@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group has-feedback">
-                                        <label for="photo">Photo<br><span class="text-danger">[min 150 X 150 size and max 200kb]</span></label>
+                                        <label for="photo">Photo<br><span class="text-danger">[min 32 X 32 size and max 5mb]</span></label>
                                         <input  type="file" class="form-control" accept=".jpeg, .jpg, .png" name="photo" placeholder="Photo image">
                                         @if($teacher && isset($teacher->photo))
                                             <input type="hidden" name="oldPhoto" value="{{$teacher->photo}}">
@@ -151,7 +151,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group has-feedback">
-                                        <label for="photo">Signature<br><span class="text-danger">[max 160 X 80 size and max 200kb]</span></label>
+                                        <label for="photo">Signature<br><span class="text-danger">[max 3000 X 3000 size and max 3mb]</span></label>
                                         <input  type="file" class="form-control" accept=".jpeg, .jpg, .png" name="signature" placeholder="Signature image">
                                         @if($teacher && isset($teacher->signature))
                                             <input type="hidden" name="oldSignature" value="{{$teacher->signature}}">

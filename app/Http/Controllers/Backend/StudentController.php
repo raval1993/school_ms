@@ -190,12 +190,12 @@ class StudentController extends Controller
     {
         //validate form
         $messages = [
-            'photo.max' => 'The :attribute size must be under 200kb.',
-            'photo.dimensions' => 'The :attribute dimensions min 150 X 150.',
+            'photo.max' => 'The :attribute size must be under 5120kb.',
+            'photo.dimensions' => 'The :attribute dimensions min 32 X 32.',
         ];
         $rules = [
-            'name' => 'required|min:5|max:255',
-            'photo' => 'mimes:jpeg,jpg,png|max:200|dimensions:min_width=150,min_height=150',
+            'name' => 'required|min:1|max:255',
+            'photo' => 'mimes:jpeg,jpg,png|max:5120|dimensions:min_width=32,min_height=32',
             'dob' => 'min:10|max:10',
             'gender' => 'required|integer',
             'religion' => 'nullable|integer',

@@ -111,7 +111,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="photo">Photo<span class="text-danger">[min 150 X 150 size and max 200kb]</span></label>
+                                        <label for="photo">Photo<span class="text-danger">[min 32 X 32 size and max 5mb]</span></label>
                                         <input  type="file" class="form-control" accept=".jpeg, .jpg, .png" name="photo" placeholder="Photo image">
                                         @if($student && isset($student->photo))
                                             <input type="hidden" name="oldPhoto" value="{{$student->photo}}">
@@ -363,7 +363,7 @@
 
                                 </div>
 
-                                <p class="lead section-title">Access Info:</p>
+                             <!--   <p class="lead section-title">Access Info:</p>
                                 <div class="row">
                                     @if(!$student)
                                     <div class="col-md-4">
@@ -395,7 +395,7 @@
                                             </div>
                                         </div>
                                     @endif
-                            </div>
+                            </div>  -->
 
 
                         </div>

@@ -317,10 +317,7 @@
                             <img src="data:image/png;base64,{{$templateConfig->signature}}" />
                             <span>Authorized Signature</span>
                         </div>
-                        <div class="barcode">
-                            <img src="{{AppHelper::getIdcardBarCode($student->regi_no)}}" />
-                            <span clas="txt_full">{{$student->regi_no}}</span>
-                        </div>
+                     
                     </div>
 
                 </div>
@@ -346,7 +343,7 @@
 <script type="text/javascript">
     window.onload = function () {
         window.print();
-        window.close();
+       // window.close();
     };
 </script>
 </body>

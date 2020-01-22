@@ -31,20 +31,20 @@ class SettingsController extends Controller
 
             //validate form
             $messages = [
-                'logo.max' => 'The :attribute size must be under 1MB.',
-                'logo_small.max' => 'The :attribute size must be under 512kb.',
-                'logo.dimensions' => 'The :attribute dimensions max be 230 X 50.',
-                'logo_small.dimensions' => 'The :attribute dimensions max be 50 X 50.',
-                'favicon.max' => 'The :attribute size must be under 512kb.',
-                'favicon.dimensions' => 'The :attribute dimensions must be 32 X 32.',
+                'logo.max' => 'The :attribute size must be under 5MB.',
+                'logo_small.max' => 'The :attribute size must be under 5mb.',
+                'logo.dimensions' => 'The :attribute dimensions max be 4000 X 4000.',
+                'logo_small.dimensions' => 'The :attribute dimensions max be 32 X 32.',
+                'favicon.max' => 'The :attribute size must be under 2mb.',
+                'favicon.dimensions' => 'The :attribute dimensions should be 32 X 32.',
             ];
 
             $rules = [
-                'name' => 'required|min:5|max:255',
-                'short_name' => 'required|min:3|max:255',
-                'logo' => 'mimes:jpeg,jpg,png|max:1024|dimensions:max_width=230,max_height=50',
-                'logo_small' => 'mimes:jpeg,jpg,png|max:512|dimensions:max_width=50,max_height=50',
-                'favicon' => 'mimes:png|max:512|dimensions:min_width=32,min_height=32,max_width=32,max_height=32',
+                'name' => 'required|min:1|max:255',
+                'short_name' => 'required|min:1|max:255',
+                'logo' => 'mimes:jpeg,jpg,png|max:5120|dimensions:max_width=3000,max_height=3000',
+                'logo_small' => 'nullable|mimes:jpeg,jpg,png|max:5120|dimensions:max_width=3000,max_height=3000',
+                'favicon' => 'nullable|mimes:png|max:2048|dimensions:min_width=32,min_height=32,max_width=500,max_height=500',
                 'establish' => 'min:4|max:255',
                 'website_link' => 'max:255',
                 'email' => 'nullable|email|max:255',

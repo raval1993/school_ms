@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="photo">Photo<br><span class="text-black">[min 150 X 150 size and max 200kb]</span></label>
+                                        <label for="photo">Photo<br><span class="text-black">[min 32 X 32 size and max 5mb]</span></label>
                                         <input  type="file" class="form-control" accept=".jpeg, .jpg, .png" name="photo" placeholder="Photo image">
                                         @if($employee && isset($employee->photo))
                                             <input type="hidden" name="oldPhoto" value="{{$employee->photo}}">
@@ -191,7 +191,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="photo">Signature<br><span class="text-black">[max 160 X 80 size and max 200kb]</span></label>
+                                        <label for="photo">Signature<br><span class="text-black">[max 3000 X 3000 size and max 3mb]</span></label>
                                         <input  type="file" class="form-control" accept=".jpeg, .jpg, .png" name="signature" placeholder="Signature image">
                                         @if($employee && isset($employee->signature))
                                             <input type="hidden" name="oldSignature" value="{{$employee->signature}}">
@@ -204,7 +204,7 @@
                             </div>
 
                             <hr>
-                            <div class="row">
+                           <!--- <div class="row">
                                 @if(!$employee)
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
@@ -236,7 +236,7 @@
                                 </div>
 
                             @endif
-                        </div>
+                        </div> --->
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <a href="{{URL::route('hrm.employee.index')}}" class="btn btn-default">Cancel</a>

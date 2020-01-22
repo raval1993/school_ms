@@ -64,7 +64,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="logo">Logo<span class="text-danger">[230 X 50 max size and max 1MB]</span></label>
+                                        <label for="logo">Logo<span class="text-danger">[3000 X 3000 max size and max 5MB]</span></label>
                                         <input  type="file" class="form-control" accept=".jpeg, .jpg, .png" name="logo" placeholder="logo image">
                                         @if($info && isset($info->logo))
                                             <input type="hidden" name="oldLogo" value="{{$info->logo}}">
@@ -76,7 +76,7 @@
                                 <div class="col-md-4">
 
                                     <div class="form-group has-feedback">
-                                        <label for="logo_small">Logo Small<span class="text-danger">[50 X 50 max size and max 512kb]</span></label>
+                                        <label for="logo_small">Logo Small [3000 X 3000 max size and max 5MB]</label>
                                         <input  type="file" class="form-control" accept=".jpeg, .jpg, .png" name="logo_small" placeholder="logo image">
                                         @if($info && isset($info->logo_small))
                                             <input type="hidden" name="oldLogoSmall" value="{{$info->logo_small}}">
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="favicon">Favicon<span class="text-danger">[only .png image][32 X 32 exact size and max 512KB]</span></label>
+                                        <label for="favicon">Favicon<span class="text"> [only .png image 32 X 32 recommend size and max 2MB]</span></label>
                                         <input  type="file" class="form-control" accept=".png" name="favicon" placeholder="favicon image">
                                         @if($info && isset($info->favicon))
                                             <input type="hidden" name="oldFavicon" value="{{$info->favicon}}">

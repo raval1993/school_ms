@@ -57,16 +57,16 @@ class TeacherController extends Controller
     {
         //validate form
         $messages = [
-            'photo.max' => 'The :attribute size must be under 200kb.',
-            'signature.max' => 'The :attribute size must be under 200kb.',
-            'photo.dimensions' => 'The :attribute dimensions min 150 X 150.',
-            'signature.dimensions' => 'The :attribute dimensions max 160 X 80.',
+            'photo.max' => 'The :attribute size must be under 5mb.',
+            'signature.max' => 'The :attribute size must be under 1mb.',
+            'photo.dimensions' => 'The :attribute dimensions min 32 X 32.',
+            'signature.dimensions' => 'The :attribute dimensions max 32 X 32.',
         ];
         $this->validate(
             $request, [
-                'name' => 'required|min:5|max:255',
-                'photo' => 'mimes:jpeg,jpg,png|max:200|dimensions:min_width=150,min_height=150',
-                'signature' => 'mimes:jpeg,jpg,png|max:200|dimensions:max_width=160,max_height=80',
+                'name' => 'required|min:1|max:255',
+                'photo' => 'mimes:jpeg,jpg,png|max:5120|dimensions:min_width=32,min_height=32',
+                'signature' => 'mimes:jpeg,jpg,png|max:3076|dimensions:max_width=3000,max_height=3000',
                 'designation' => 'max:255',
                 'qualification' => 'max:255',
                 'dob' => 'min:10',
