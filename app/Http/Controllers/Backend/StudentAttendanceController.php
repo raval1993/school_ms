@@ -159,7 +159,7 @@ class StudentAttendanceController extends Controller
         $section_id = null;
         $sendNotification = 0;
 
-        if ($request->isMethod('post')) {
+       if ($request->isMethod('post')) {
 
             if(AppHelper::getInstituteCategory() == 'college') {
                 $acYear = $request->get('academic_year', 0);
@@ -203,18 +203,26 @@ class StudentAttendanceController extends Controller
             }
 
             $sendNotification = AppHelper::getAppSettings('student_attendance_notification');
-        }
+       }
 
         $classes = IClass::where('status', AppHelper::ACTIVE)
             ->orderBy('order','asc')
             ->pluck('name', 'id');
+			
+        $sendNotification = AppHelper::getAppSettings('student_attendance_notification');
 
         //if its college then have to get those academic years
         if(AppHelper::getInstituteCategory() == 'college') {
             $academic_years = AcademicYear::where('status', '1')->orderBy('id', 'desc')->pluck('title', 'id');
         }
-
-
+		
+		/*$students = Registration::with(['info' => function($query){
+                $query->select('name','id');
+            }])->select( 'regi_no', 'roll_no', 'id','student_id')
+                ->orderBy('roll_no','asc')
+                ->get();*/
+		$sections = Section::where('status', AppHelper::ACTIVE);
+ 
         return view('backend.attendance.student.add', compact(
             'academic_years',
             'classes',
